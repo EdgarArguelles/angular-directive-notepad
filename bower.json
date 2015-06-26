@@ -1,0 +1,18 @@
+{
+  "name": "angular-directive-notepad",
+  "version": "1.0.0",
+  "authors": [
+    "EdgarArguelles"
+  ],
+  "description": "basic example of angular directives",
+  "main": "app.js",
+  "keywords": [
+    "angularjs",
+    "directive"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.1",
+    "jquery": "~2.1.4"
+  }
+}
