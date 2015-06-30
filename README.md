@@ -10,3 +10,6 @@ $ bower install
 
 # Run
 $ src/index.html
+
+## Live Demo
+http://edgararguelles.github.io/angular-directive-notepad/src/index.html#

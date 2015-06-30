@@ -1,7 +1,19 @@
 (function () {
     angular.module('app', [])
+        .controller('notesCtrl', notesCtrl)
         .factory('notesFactory', notesFactory)
         .directive('notepad', notepad);
+
+    function notesCtrl(notesFactory) {
+        if (notesFactory.getAll().length <= 0) {
+            var note = {
+                title: "Example 1",
+                content: "Example 1",
+                id: Math.random()
+            };
+            this.notes = notesFactory.put(note);
+        }
+    }
 
     function notepad(notesFactory) {
         return {
@@ -27,7 +39,8 @@
                         var note = {};
                         note.title = scope.noteText.length > 10 ? scope.noteText.substring(0, 10) + '. . .' : scope.noteText;
                         note.content = scope.noteText;
-                        note.id = scope.index != -1 ? scope.index : Math.random();;
+                        note.id = scope.index != -1 ? scope.index : Math.random();
+                        ;
                         scope.notes = notesFactory.put(note);
                     }
                     scope.restore();
