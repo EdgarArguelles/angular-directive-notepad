@@ -1,7 +1,11 @@
 <div class="note-area" ng-show="!editMode">
     <ul>
-        <li ng-repeat="note in notes|orderBy:'id'">
-            <a href="#" ng-click="openEditor(note.id)">{{note.title}}</a>
+        <li ng-repeat="note in notes|orderBy:'title'">
+            <h2>
+                {{$index + 1}}. {{note.title}}
+                <img style="width: 20px; cursor: pointer;" src="css/icons/edit.png" ng-click="openEditor(note.id)">
+                <img style="width: 20px; cursor: pointer;" src="css/icons/delete.png" ng-click="delete(note.id)">
+            </h2>
         </li>
     </ul>
 </div>
